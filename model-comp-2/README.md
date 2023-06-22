@@ -4,20 +4,20 @@
 
 ### Модель
 
-Архитектура молели: CRNN
-Сверточная часть (FeatureExtractor): efficientnet_v2_s (1280 output features) + AvgPool2d (make height equal to 1) + Conv2d (apply projection to increase width to 30)
-Рекуррентная часть (SequencePredictor): GRU (2 layers, bidirectional, hidden size 128)
-Размер входного изображения: 320x64 (все изображения приводятся к этому разрешению)
+    Архитектура молели: CRNN
+    Сверточная часть (FeatureExtractor): efficientnet_v2_s (1280 output features) + AvgPool2d (make height equal to 1) + Conv2d (apply projection to increase width to 30)
+    Рекуррентная часть (SequencePredictor): GRU (2 layers, bidirectional, hidden size 128)
+    Размер входного изображения: 320x64 (все изображения приводятся к этому разрешению)
 
 ### Обучение модели
 
-Оптимизатор: AdamW
-Число эпох: 20
-Размер батча: 128
-Скорость обучения: 1e-4
-Функция потерь: ctc_loss
-Train/test: 80%/20%
-Аугментации тренировочных данных: Grayscale, Sharpness, GaussianBlur, Rotation
+    Оптимизатор: AdamW
+    Число эпох: 20
+    Размер батча: 128
+    Скорость обучения: 1e-4
+    Функция потерь: ctc_loss
+    Train/test: 80%/20%
+    Аугментации тренировочных данных: Grayscale, Sharpness, GaussianBlur, Rotation
 
 ### Улучшения результатов
 
